@@ -1,8 +1,5 @@
-use std::{
-    fs::File,
-    io::{BufReader, Lines},
-};
+use crate::args::Args;
 
 pub trait ExerciseEngine {
-    fn solve(&self, lines: Lines<BufReader<File>>) -> i128;
+    fn solve(&self, args: Args, lines: Vec<String>) -> i128;
 }
