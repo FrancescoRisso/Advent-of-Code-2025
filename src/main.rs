@@ -7,6 +7,8 @@ use crate::load::load_file;
 use crate::solvers::day_08_es_01::Solver08_1;
 use crate::solvers::day_08_es_02::Solver08_2;
 use crate::solvers::day_09_es_01::Solver09_1;
+use crate::solvers::day_10_es_01::Solver10_1;
+use crate::solvers::day_10_es_02::Solver10_2;
 use args::Args;
 use clap::Parser;
 
@@ -23,6 +25,8 @@ fn main() {
         (Day::Eight, Exercise::Two) => &Solver08_2 {},
         (Day::Nine, Exercise::One) => &Solver09_1 {},
         (Day::Nine, Exercise::Two) => unimplemented!(),
+        (Day::Ten, Exercise::One) => &Solver10_1 {},
+        (Day::Ten, Exercise::Two) => &Solver10_2 {},
         _ => todo!(),
     };
 
