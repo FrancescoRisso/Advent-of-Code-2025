@@ -18,7 +18,6 @@ use args::exercise::Exercise;
 
 fn main() {
     let args = Args::parse();
-    println!("{}", args);
 
     let exercise: &dyn ExerciseEngine = match (&args.day, &args.exercise) {
         (Day::Eight, Exercise::One) => &Solver08_1 {},
@@ -31,7 +30,10 @@ fn main() {
     };
 
     let fpath = &args.input_file.path(&args.day);
+    let alt_fpath = &args.input_file.path_alt(&args.day, &args.exercise);
 
-    let file_content = load_file(&fpath);
+    let (file_content, actual_path) = load_file(&fpath, Some(&alt_fpath));
+	
+    args.print(actual_path);
     println!("{}", exercise.solve(args, file_content));
 }

@@ -1,5 +1,3 @@
-use std::fmt::Display;
-
 use clap::Parser;
 
 pub mod day;
@@ -23,14 +21,11 @@ pub struct Args {
     pub input_file: InputFile,
 }
 
-impl Display for Args {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
+impl Args {
+    pub fn print(&self, used_path: String) {
+        println!(
             "Executing exercise {} from day {} on file \"{}\"",
-            self.exercise,
-            self.day,
-            self.input_file.path(&self.day)
+            self.exercise, self.day, used_path
         )
     }
 }
