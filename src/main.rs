@@ -9,6 +9,7 @@ use crate::solvers::day_08_es_02::Solver08_2;
 use crate::solvers::day_09_es_01::Solver09_1;
 use crate::solvers::day_10_es_01::Solver10_1;
 use crate::solvers::day_10_es_02::Solver10_2;
+use crate::solvers::day_11::Solver11;
 use args::Args;
 use clap::Parser;
 
@@ -26,6 +27,7 @@ fn main() {
         (Day::Nine, Exercise::Two) => unimplemented!(),
         (Day::Ten, Exercise::One) => &Solver10_1 {},
         (Day::Ten, Exercise::Two) => &Solver10_2 {},
+        (Day::Eleven, _) => &Solver11 {},
         _ => todo!(),
     };
 
